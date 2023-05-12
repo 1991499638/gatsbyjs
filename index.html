@@ -1,0 +1,679 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>区块链知识库</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: none;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="6d954d02-cfed-4f22-af16-fa70ba93eca0" class="page sans"><header><img class="page-cover-image" src="https://www.notion.so/images/page-cover/gradients_11.jpg" style="object-position:center 40%"/><h1 class="page-title">区块链知识库</h1></header><div class="page-body"><div id="c94cd043-06bd-4b2c-88b9-a2f66087c8c7" class="column-list"><div id="ad466eba-1f49-483e-9174-750021d6baa3" style="width:33.33333333333333%" class="column"><ul id="ee4de443-384d-4719-8e0c-651e39a7af95" class="block-color-purple_background toggle"><li><details open=""><summary><mark class="highlight-purple"><strong><em>solidity</em></strong></mark></summary><figure id="7d594fe5-2942-4ba9-a720-42cd6d136bd4" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/ABI%E7%BC%96%E7%A0%81%E5%8F%8A%E8%A7%A3%E7%A0%81%E5%87%BD%E6%95%B0%207d594fe529424ba9a72042cd6d136bd4.html">ABI编码及解码函数</a></figure><figure id="8a79e9e1-09fe-4754-900c-a11cc8ce1ed2" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/break%20&amp;&amp;%20continue%208a79e9e109fe4754900ca11cc8ce1ed2.html">break &amp;&amp; continue</a></figure><figure id="fb760e70-dad7-48a2-9000-3cb30fafbd86" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/bytes%E6%88%90%E5%91%98%E5%87%BD%E6%95%B0%20fb760e70dad748a290003cb30fafbd86.html">bytes成员函数</a></figure><figure id="a27219b7-559b-4e45-afda-29459ec25929" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/call%20a27219b7559b4e45afda29459ec25929.html">call</a></figure><figure id="c0b4ac63-23d1-445d-be92-f49321244870" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/DApp%E4%BB%8B%E7%BB%8D%20c0b4ac6323d1445dbe92f49321244870.html">DApp介绍</a></figure><figure id="edc692da-bb6d-4e58-89d1-ca99629d8d04" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/ethers%20js%E5%8A%9F%E8%83%BD%20edc692dabb6d4e5889d1ca99629d8d04.html">ethers.js功能</a></figure><figure id="34f98054-dea0-463a-9bcd-a0a902940f25" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/ethers%20js%E4%BB%8B%E7%BB%8D%2034f98054dea0463a9bcda0a902940f25.html">ethers.js介绍</a></figure><figure id="480472ee-8494-418e-9b32-254303bb43b1" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/for%E5%BE%AA%E7%8E%AF%20480472ee8494418e9b32254303bb43b1.html">for循环</a></figure><figure id="dbf99fd1-0951-49ec-86f0-8c83f8652831" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/Getter%E5%87%BD%E6%95%B0%20dbf99fd1095149ec86f08c83f8652831.html">Getter函数</a></figure><figure id="16be0232-4a8d-404a-a013-f8c8a2688ecb" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/Lottery%E5%90%88%E7%BA%A6%2016be02324a8d404aa013f8c8a2688ecb.html">Lottery合约</a></figure><figure id="0f4fa2f2-d28b-45bc-a3e1-043e265cbe53" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/NFT%E4%BA%A4%E6%98%93%E6%89%80%200f4fa2f2d28b45bca3e1043e265cbe53.html">NFT交易所</a></figure><figure id="bcb2d923-43be-4a7a-b39c-cbccd29d8dab" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/receive()&amp;&amp;fallback()%20bcb2d92343be4a7ab39ccbccd29d8dab.html">receive()&amp;&amp;fallback()</a></figure><figure id="e5a12618-a221-4bb0-98c7-980845ca6406" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/Remix%20IDE%20Linux%E7%89%88%E6%9C%AC%E5%AE%89%E8%A3%85%20e5a12618a2214bb098c7980845ca6406.html">Remix IDE Linux版本安装</a></figure><figure id="56b36547-993e-4118-b06a-41e995e10286" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/Remix%20IDE%20macOS%E7%89%88%E6%9C%AC%E5%AE%89%E8%A3%85%2056b36547993e4118b06a41e995e10286.html">Remix IDE macOS版本安装</a></figure><figure id="60bfb967-1ad6-4591-b5a4-3c0a3c45c490" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/Remix%20IDE%20window%E6%98%AF%E7%89%88%E6%9C%AC%E5%AE%89%E8%A3%85%2060bfb9671ad64591b5a43c0a3c45c490.html">Remix IDE window是版本安装</a></figure><figure id="d385f6ff-d9e8-4aed-855c-59242c7dcf40" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/Remix%20IDE%E5%8A%9F%E8%83%BD%E7%95%8C%E9%9D%A2%E4%BB%8B%E7%BB%8D%20d385f6ffd9e84aed855c59242c7dcf40.html">Remix IDE功能界面介绍</a></figure><figure id="2798ca91-e8e6-46db-92ce-72e8fa1615af" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/remix%20IDE%E7%BD%91%E9%A1%B5%E7%89%88%E4%BB%8B%E7%BB%8D%202798ca91e8e646db92ce72e8fa1615af.html">remix IDE网页版介绍</a></figure><figure id="c87174c0-5884-48d8-ad8a-10f142e1a16a" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/SafeMath%20c87174c0588448d8ad8a10f142e1a16a.html">SafeMath</a></figure><figure id="295f0d17-7996-4998-ae62-ab9bfbe85f9c" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/send%20295f0d1779964998ae62ab9bfbe85f9c.html">send</a></figure><figure id="4011fe83-1d0e-4d0a-90db-c079e424e9d0" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/Solidity%E5%AD%98%E5%82%A8%E7%B1%BB%E5%9E%8B%EF%BC%88memory%E3%80%81storage%E3%80%81calldata%EF%BC%89%204011fe831d0e4d0a90dbc079e424e9d0.html">Solidity存储类型（memory、storage、calldata）</a></figure><figure id="8e3b8c7c-41c8-4792-945f-445cb144c201" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/Solidity%E7%9A%84%E5%BA%93%208e3b8c7c41c84792945f445cb144c201.html">Solidity的库</a></figure><figure id="9cae25a4-dd25-4f05-9efb-13d8ea154fa3" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/Solidity%E6%9E%84%E9%80%A0%E5%99%A8constructor%209cae25a4dd254f059efb13d8ea154fa3.html">Solidity构造器constructor</a></figure><figure id="6b91f630-8be6-47ec-a71d-ee204e86a157" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/Solidity%E5%90%88%E7%BA%A6%E7%BB%93%E6%9E%84%206b91f6308be647eca71dee204e86a157.html">Solidity合约结构</a></figure><figure id="2cd0922e-2f4c-4843-a06b-aa651005f7bc" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/Solidity%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83%202cd0922e2f4c4843a06baa651005f7bc.html">Solidity命名规范</a></figure><figure id="0387f0e3-ffc1-47c5-843d-22970c3bfd52" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/Solidity%E4%BA%8B%E4%BB%B6Event%200387f0e3ffc147c5843d22970c3bfd52.html">Solidity事件Event</a></figure><figure id="527897bb-e5e3-45de-8035-533fc2f40475" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/Solidity%E6%BA%90%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84%EF%BC%88SPDX%E7%89%88%E6%9D%83%E8%AE%B8%E5%8F%AF%E8%AF%81%E3%80%81Pragma%E3%80%81%E7%89%88%E6%9C%AC%E6%A0%87%E8%AF%86%EF%BC%89%20527897bbe5e345de8035533fc2f40475.html">Solidity源文件结构（SPDX版权许可证、Pragma、版本标识）</a></figure><figure id="7341d592-d3f2-4cfb-a1d3-65d407d9c603" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/Solidity%E6%BA%90%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84%EF%BC%88%E5%AF%BC%E5%85%A5%E5%85%B6%E4%BB%96%E6%BA%90%E6%96%87%E4%BB%B6%E3%80%81%E6%B3%A8%E9%87%8A%EF%BC%89%207341d592d3f24cfba1d365d407d9c603.html">Solidity源文件结构（导入其他源文件、注释）</a></figure><figure id="85ebee79-dc17-4bcf-9c3f-939287ea5345" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/Solidity%E8%BF%90%E8%A1%8C%E5%8E%9F%E7%90%86%2085ebee79dc174bcf9c3f939287ea5345.html">Solidity运行原理</a></figure><figure id="7d57bce3-13bc-484b-ac5f-79149c6edf65" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/Solidity%E6%95%B4%E5%9E%8B%207d57bce313bc484bac5f79149c6edf65.html">Solidity整型</a></figure><figure id="764a74f6-d38a-4a9e-b42a-698078a54737" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/Solidity%E7%8A%B6%E6%80%81%E5%8F%98%E9%87%8F%EF%BC%88constant%E3%80%81immutable%EF%BC%89%20764a74f6d38a4a9eb42a698078a54737.html">Solidity状态变量（constant、immutable）</a></figure><figure id="50f0ea30-dca2-4008-bdcd-354b3ac21023" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/string%E6%88%90%E5%91%98%E5%87%BD%E6%95%B0%2050f0ea30dca24008bdcd354b3ac21023.html">string成员函数</a></figure><figure id="feb5e1f3-b6b2-4f18-b588-804907183c23" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/Web3%20Provider%20feb5e1f3b6b24f18b588804907183c23.html">Web3 Provider </a></figure><figure id="8a6a0af9-3ae9-4c0a-84cc-0b11a3aff466" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/web3%20js%E4%BB%8B%E7%BB%8D%208a6a0af93ae94c0a84cc0b11a3aff466.html">web3.js介绍</a></figure><figure id="cf904ff7-9b11-41a7-8400-0fb4e697a636" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/WETH%EF%BC%88%E4%BB%8B%E7%BB%8D%E3%80%81WETH%E5%AD%98%E6%AC%BE%E5%90%88%E7%BA%A6%EF%BC%89%20cf904ff79b1141a784000fb4e697a636.html">WETH（介绍、WETH存款合约）</a></figure><figure id="273275d2-dea3-4404-8c6d-316cd5133b69" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/while&amp;&amp;do-while%E8%AF%AD%E5%8F%A5%20273275d2dea344048c6d316cd5133b69.html">while&amp;&amp;do-while语句</a></figure><figure id="4934a325-eb7e-45d6-9c42-ba7b9b297e1d" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E5%AE%89%E8%A3%85%E4%B8%8E%E5%AF%BC%E5%85%A5%204934a325eb7e45d69c42ba7b9b297e1d.html">安装与导入</a></figure><figure id="559f2fcc-4b74-464e-80c5-f1f8af69f641" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E6%AF%94%E8%BE%83%E8%BF%90%E7%AE%97%20559f2fcc4b74464e80c5f1f8af69f641.html">比较运算</a></figure><figure id="1173d1e3-ceea-4e02-9459-3bd6413f18bb" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E7%BC%96%E8%AF%91%E5%99%A8%E8%BE%93%E5%85%A5%E5%92%8C%E8%BE%93%E5%87%BAJSON%E6%8F%8F%E8%BF%B0%201173d1e3ceea4e0294593bd6413f18bb.html">编译器输入和输出JSON描述</a></figure><figure id="98a83826-fd8c-4996-9d08-823caed8c956" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E5%B8%83%E5%B0%94%E7%B1%BB%E5%9E%8B%2098a83826fd8c49969d08823caed8c956.html">布尔类型</a></figure><figure id="98bf9896-9a1d-4a9a-997b-7dc18957bf03" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E6%8A%BD%E8%B1%A1%E5%90%88%E7%BA%A6%E4%BB%A5%E5%8F%8A%E6%8E%A5%E5%8F%A3%2098bf98969a1d4a9a997b7dc18957bf03.html">抽象合约以及接口</a></figure><figure id="7a17bb13-4561-4d9d-973f-14418d823f0b" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86%E4%B8%8E%E5%BC%82%E5%B8%B8%EF%BC%88assert%E3%80%81require%E3%80%81revert%E3%80%81error%E3%80%81try-catch%EF%BC%89%207a17bb1345614d9d973f14418d823f0b.html">错误处理与异常（assert、require、revert、error、try-catch）</a></figure><figure id="9e540180-0def-4763-ac0b-b18b2a001b94" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E5%9C%B0%E5%9D%80%E6%88%90%E5%91%98%E5%87%BD%E6%95%B0%209e5401800def4763ac0bb18b2a001b94.html">地址成员函数</a></figure><figure id="6fd25f06-783c-45d1-828b-b5a276e0f349" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E5%9C%B0%E5%9D%80%E7%B1%BB%E5%9E%8B%206fd25f06783c45d1828bb5a276e0f349.html">地址类型</a></figure><figure id="dde65e59-3edc-40c4-8a57-f521cc3ba0e4" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E8%B0%83%E7%94%A8%E5%90%88%E7%BA%A6%E5%87%BD%E6%95%B0%20dde65e593edc40c48a57f521cc3ba0e4.html">调用合约函数</a></figure><figure id="a7571314-e9af-40e2-8aed-146a398042dd" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E8%B0%83%E7%94%A8%E5%85%B6%E4%BB%96%E5%90%88%E7%BA%A6%20a7571314e9af40e28aed146a398042dd.html">调用其他合约</a></figure><figure id="593eb3fc-c632-4ad3-a26d-0ff093f6761b" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E5%AE%9A%E9%95%BF%E5%AD%97%E8%8A%82%E7%BB%84%E4%B8%8E%E5%AD%97%E9%9D%A2%E5%B8%B8%E9%87%8F%E8%BD%AC%E6%8D%A2%20593eb3fcc6324ad3a26d0ff093f6761b.html">定长字节组与字面常量转换</a></figure><figure id="9cd68687-0c12-4fca-ae3b-7d5773921bce" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E5%A4%9A%E7%AD%BE%E9%92%B1%E5%8C%85%E5%90%88%E7%BA%A6%209cd686870c124fcaae3b7d5773921bce.html">多签钱包合约</a></figure><figure id="a04294c0-5d21-4fe1-9184-7c1e047bbf57" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E9%9D%9E%E6%A3%80%E6%9F%A5%E6%A8%A1%E5%BC%8F%20a04294c05d214fe191847c1e047bbf57.html">非检查模式</a></figure><figure id="bfddd616-5e1d-4176-a3f2-1cbd6db1922d" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E8%B5%8B%E5%80%BC%E8%BF%90%E7%AE%97%E7%AC%A6%20bfddd6165e1d4176a3f21cbd6db1922d.html">赋值运算符</a></figure><figure id="79ff16e4-19f4-4443-a1c6-4814e7fc66b8" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E8%BF%87%E6%BB%A4%E4%BA%8B%E4%BB%B6%2079ff16e419f44443a1c64814e7fc66b8.html">过滤事件</a></figure><figure id="616922af-5ddc-4a9f-8baf-58ec615cb1d2" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E5%87%BD%E6%95%B0%E7%9A%84%E7%BC%96%E5%86%99%E6%A0%BC%E5%BC%8F%20616922af5ddc4a9f8baf58ec615cb1d2.html">函数的编写格式</a></figure><figure id="9740dd8e-af1e-4b0a-bce5-cc110662ca6c" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8%209740dd8eaf1e4b0abce5cc110662ca6c.html">函数调用</a></figure><figure id="6200b2af-690e-47b1-97fb-be843e6673a6" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E5%87%BD%E6%95%B0%E8%BF%94%E5%9B%9E%E5%8F%98%E9%87%8F%206200b2af690e47b197fbbe843e6673a6.html">函数返回变量</a></figure><figure id="6157b5df-c094-4c35-835d-64d03ae0a719" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E5%87%BD%E6%95%B0%E4%BF%AE%E9%A5%B0%E5%99%A8modifier%206157b5dfc0944c35835d64d03ae0a719.html">函数修饰器modifier</a></figure><figure id="f2e3f552-32de-4796-82b8-f2baa882e4f7" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E5%87%BD%E6%95%B0%E9%80%89%E6%8B%A9%E5%99%A8selector%20f2e3f55232de479682b8f2baa882e4f7.html">函数选择器selector</a></figure><figure id="665476fd-4ca5-4af5-959a-3fe51ca72b3e" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E5%87%BD%E6%95%B0%E9%87%8D%E8%BD%BD%20665476fd4ca54af5959a3fe51ca72b3e.html">函数重载</a></figure><figure id="7dc22c0c-a18b-46f2-86ce-0b21f17889a2" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E5%90%88%E7%BA%A6%20%E7%9B%B8%E5%85%B3%E5%8F%98%E9%87%8F%E4%B8%8E%E5%87%BD%E6%95%B0%207dc22c0ca18b46f286ce0b21f17889a2.html">合约 相关变量与函数</a></figure><figure id="8bf48b4c-1547-429a-85ec-5a3242e31d41" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E5%90%88%E7%BA%A6%E9%83%A8%E7%BD%B2%208bf48b4c1547429a85ec5a3242e31d41.html">合约部署</a></figure><figure id="f8c5dcc9-7e9e-40ad-90af-9a98331f39c9" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E5%90%88%E7%BA%A6%E7%BB%A7%E6%89%BF%20f8c5dcc97e9e40ad90af9a98331f39c9.html">合约继承</a></figure><figure id="930672d1-b930-4f98-aa0b-fd6556104792" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E5%90%88%E7%BA%A6%E6%8E%A5%E5%8F%A3JSON%E6%A0%BC%E5%BC%8F%20930672d1b9304f98aa0bfd6556104792.html">合约接口JSON格式</a></figure><figure id="6f118fa6-d02d-40b5-8592-a36bae3ac8e6" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E7%9B%91%E5%90%AC%E4%BA%8B%E4%BB%B6%206f118fa6d02d40b58592a36bae3ac8e6.html">监听事件</a></figure><figure id="e4393a1c-9efa-434f-a84c-e02a1f94fe12" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E6%A3%80%E6%9F%A5%E6%A8%A1%E5%BC%8F%20e4393a1c9efa434fa84ce02a1f94fe12.html">检查模式</a></figure><figure id="f8a472eb-4dd7-4f67-81d1-33391676cbb2" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E6%A3%80%E7%B4%A2%E4%BA%8B%E4%BB%B6%20f8a472eb4dd74f6781d133391676cbb2.html">检索事件</a></figure><figure id="c4dab173-f8ca-4616-961b-e928cc520c45" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E5%B0%86EVM%E7%89%88%E6%9C%AC%E8%AE%BE%E7%BD%AE%E4%B8%BA%E7%9B%AE%E6%A0%87%20c4dab173f8ca4616961be928cc520c45.html">将EVM版本设置为目标</a></figure><figure id="83eb5804-5136-477d-88a2-6d7cd53f1530" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E7%BB%93%E6%9E%84struct%2083eb58045136477d88a26d7cd53f1530.html">结构struct</a></figure><figure id="74db2c0f-df09-4949-bb83-599b81bff846" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E5%8F%AF%E8%A7%81%E6%80%A7%EF%BC%88Private%E3%80%81Public%E3%80%81Internal%E3%80%81External%EF%BC%89%2074db2c0fdf094949bb83599b81bff846.html">可见性（Private、Public、Internal、External）</a></figure><figure id="bc2fe4ec-34e3-4797-ad63-afd28326edac" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E7%A9%BA%E6%8A%95%E5%90%88%E7%BA%A6%20bc2fe4ec34e34797ad63afd28326edac.html">空投合约</a></figure><figure id="e372d387-6aba-4e2d-a142-a8964ecb236b" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E7%B1%BB%E5%9E%8B%E6%8E%A8%E6%96%AD%20e372d3876aba4e2da142a8964ecb236b.html">类型推断</a></figure><figure id="c825d21d-1e27-486f-a29f-efb2a15b5270" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E7%B1%BB%E5%9E%8B%E4%BF%A1%E6%81%AF%E5%87%BD%E6%95%B0%20c825d21d1e27486fa29fefb2a15b5270.html">类型信息函数</a></figure><figure id="bd4a05e3-f21c-45cb-9117-e5b824798bc7" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%20bd4a05e3f21c45cb9117e5b824798bc7.html">逻辑运算</a></figure><figure id="4fffcef5-13ed-4cc2-8a07-d22d9fa61f0d" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E6%9E%9A%E4%B8%BE%E7%B1%BB%E5%9E%8B%204fffcef513ed4cc28a07d22d9fa61f0d.html">枚举类型</a></figure><figure id="0eb10620-fdea-421a-a9b3-b87620f48b8e" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%BC%96%E8%AF%91%E5%99%A8%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95%200eb10620fdea421aa9b3b87620f48b8e.html">命令行编译器基本用法</a></figure><figure id="35b720ae-7eb0-4eb8-9869-a6518ff7829c" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E7%AD%BE%E5%90%8D%E5%99%A8Signer%2035b720ae7eb04eb89869a6518ff7829c.html">签名器Signer</a></figure><figure id="f7be68c0-8082-4cd4-950e-18ebeeed4c91" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E9%92%B1%E5%8C%85%E7%B1%BBWallet%20f7be68c080824cd4950e18ebeeed4c91.html">钱包类Wallet</a></figure><figure id="7552d6a8-7463-48ca-83ff-842dcbb35d94" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E5%8C%BA%E5%9D%97%E5%92%8C%E4%BA%A4%E6%98%93%E5%B1%9E%E6%80%A7%207552d6a8746348ca83ff842dcbb35d94.html">区块和交易属性</a></figure><figure id="dc0d5a82-1dec-4d33-99f9-40112d12f767" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E5%88%A0%E9%99%A4%E5%90%88%E7%BA%A6%20dc0d5a821dec4d3399f940112d12f767.html">删除合约</a></figure><figure id="b8c74c1c-b9e5-4fdf-a6b4-8066d3258ab8" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E6%97%B6%E9%97%B4%E5%8D%95%E4%BD%8D%20b8c74c1cb9e54fdfa6b48066d3258ab8.html">时间单位</a></figure><figure id="a00ac199-c511-4ffb-b666-ef0a7cb992eb" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E5%AE%9E%E4%BE%8B%E5%8C%96Web3%20js%20a00ac199c5114ffbb666ef0a7cb992eb.html">实例化Web3.js</a></figure><figure id="1fc66f84-e572-43b3-b91b-d06ae8140434" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E6%95%B0%E5%AD%A6%E5%92%8C%E5%AF%86%E7%A0%81%E5%AD%A6%E5%87%BD%E6%95%B0%201fc66f84e57243b3b91bd06ae8140434.html">数学和密码学函数</a></figure><figure id="49aa0e62-5a79-4981-87b5-15b4e68a8468" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E6%95%B0%E7%BB%84%EF%BC%88%E5%9B%BA%E5%AE%9A%E6%95%B0%E7%BB%84%E3%80%81%E5%8A%A8%E6%80%81%E6%95%B0%E7%BB%84%E3%80%81%E7%89%B9%E6%AE%8A%E6%95%B0%E7%BB%84%E3%80%90%E5%AD%97%E8%8A%82%E6%95%B0%E7%BB%84%E3%80%81%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%95%B0%E7%BB%84%E3%80%91%EF%BC%89%2049aa0e625a79498187b515b4e68a8468.html">数组（固定数组、动态数组、特殊数组【字节数组、字符串数组】）</a></figure><figure id="6647337b-92dc-4fe3-bd38-801eaf540e68" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E7%A7%81%E9%92%A5%E7%AE%A1%E7%90%86ethers%20js%206647337b92dc4fe3bd38801eaf540e68.html">私钥管理ethers.js</a></figure><figure id="8b45ccf5-1b0c-47ff-8cfa-5656406a53d6" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E7%AE%97%E6%9C%AF%E8%BF%90%E7%AE%97%E7%AC%A6%208b45ccf51b0c47ff8cfa5656406a53d6.html">算术运算符</a></figure><figure id="1cc30317-e1c1-4d82-807a-90517db63e28" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E6%8F%90%E4%BE%9B%E8%80%85Provider%201cc30317e1c14d82807a90517db63e28.html">提供者Provider</a></figure><figure id="22084f20-a525-4bfa-a369-15f67dc597a9" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E6%9D%A1%E4%BB%B6%E8%AF%AD%E5%8F%A5%EF%BC%88if-%20if%20else%20-%20else%EF%BC%89%2022084f20a5254bfaa36915f67dc597a9.html">条件语句（if- if else - else）</a></figure><figure id="8cc27755-69b2-42e8-a0eb-638eeabe62b5" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E9%80%9A%E8%BF%87%E6%B5%8F%E8%A7%88%E5%99%A8%E9%AA%8C%E8%AF%81%E5%90%88%E7%BA%A6%208cc2775569b242e8a0eb638eeabe62b5.html">通过浏览器验证合约</a></figure><figure id="d0beff23-09a4-434e-b575-39590bdd73d6" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E6%8A%95%E7%A5%A8%E5%90%88%E7%BA%A6%20d0beff2309a4434eb57539590bdd73d6.html">投票合约</a></figure><figure id="1cea8ad0-1ef8-4918-911a-17fea278485d" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E6%98%BE%E5%BC%8F%E8%BD%AC%E6%8D%A2%201cea8ad01ef84918911a17fea278485d.html">显式转换</a></figure><figure id="275866e3-71ba-4bb0-b82a-a58c6fd8c0a9" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E4%BB%A5%E5%A4%AA%E5%B8%81%E5%8D%95%E4%BD%8D%20275866e371ba4bb0b82aa58c6fd8c0a9.html">以太币单位</a></figure><figure id="d08b43ee-ac4c-4228-98e3-667a6e558baa" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E9%9A%90%E5%BC%8F%E8%BD%AC%E6%8D%A2%20d08b43eeac4c422898e3667a6e558baa.html">隐式转换</a></figure><figure id="4a7483c4-690d-494f-b831-acaef6734141" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E6%98%A0%E5%B0%84mapping%204a7483c4690d494fb831acaef6734141.html">映射mapping</a></figure><figure id="39ae32cb-ea4e-479f-852f-74da1ebb0b0a" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E8%BF%90%E7%AE%97%E7%AC%A6%E4%BC%98%E5%85%88%E7%BA%A7%2039ae32cbea4e479f852f74da1ebb0b0a.html">运算符优先级</a></figure><figure id="41b29df5-f716-4d65-9a5e-ef1662b14b2c" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E5%9C%A8%E5%90%88%E7%BA%A6%E4%B8%AD%E5%88%9B%E5%BB%BA%E6%96%B0%E7%9A%84%E5%90%88%E7%BA%A6%EF%BC%88create%E3%80%81create2%EF%BC%89%2041b29df5f7164d659a5eef1662b14b2c.html">在合约中创建新的合约（create、create2）</a></figure><figure id="04c2167a-61d6-4022-a701-bc406ec42115" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E6%95%B4%E5%9E%8B%E4%B8%8E%E5%AD%97%E9%9D%A2%E5%B8%B8%E9%87%8F%E8%BD%AC%E6%8D%A2%2004c2167a61d64022a701bc406ec42115.html">整型与字面常量转换</a></figure><figure id="2e1dba48-af63-4ba4-84be-4e2541b07f1c" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E4%BC%97%E7%AD%B9%E9%A1%B9%E7%9B%AE%202e1dba48af634ba484be4e2541b07f1c.html">众筹项目</a></figure><figure id="910cf144-a53d-4136-9c43-7ac582c12409" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E7%8A%B6%E6%80%81%E5%8F%AF%E5%8F%98%E6%80%A7%EF%BC%88view%E3%80%81pure%E3%80%81payable%EF%BC%89%20910cf144a53d41369c437ac582c12409.html">状态可变性（view、pure、payable）</a></figure><figure id="cbcc0568-02b8-4c6e-ac6f-40e2b8c7fb74" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E5%AD%97%E7%AC%A6%E4%B8%B2%20cbcc056802b84c6eac6f40e2b8c7fb74.html">字符串</a></figure><figure id="a5f248dc-809a-4c29-b082-6995c65ce907" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E5%AD%97%E8%8A%82%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%20a5f248dc809a4c29b0826995c65ce907.html">字节数据类型</a></figure><p id="4b0219bf-9241-4e36-acac-3a3766c0bc9d" class="">
+</p></details></li></ul><div id="f71877fe-ea22-4e9a-b928-07e1da8c7d24" class="column-list"><div id="30bd7960-99ce-4228-b942-a8c9006ae1eb" style="width:193.75%" class="column"><p id="fa46a3a9-7f73-46c0-8115-3ec76a5074a2" class="">
+</p><p id="5e5fab78-21d1-44ab-9314-89a4f227840c" class="">
+</p></div><div id="9de381bf-dc81-4a81-8480-e01dfb817b91" style="width:6.25%" class="column"><p id="89d06ec5-6982-4161-823e-bf536a5bd3df" class="">
+</p></div></div></div><div id="9eb92055-7e51-455a-b6bc-a540ce14ebf6" style="width:33.33333333333333%" class="column"><ul id="d8709835-dbac-4863-a867-78fbd2ff912f" class="block-color-blue_background toggle"><li><details open=""><summary><mark class="highlight-purple"><em><strong>比特币</strong></em></mark></summary><figure id="2107f98f-caee-405c-868d-d436696f8878" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/51%25%E6%94%BB%E5%87%BB%202107f98fcaee405c868dd436696f8878.html">51%攻击</a></figure><figure id="769b5476-1539-42bc-93aa-080e417ef3e8" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/Base58%E5%92%8CBase58Check%E7%BC%96%E7%A0%81%20769b5476153942bc93aa080e417ef3e8.html">Base58和Base58Check编码</a></figure><figure id="ada64083-94db-4524-b05d-d4de00f07028" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/BIP-9%E4%BF%A1%E5%8F%B7%E4%B8%8E%E6%BF%80%E6%B4%BB%20ada6408394db4524b05dd4de00f07028.html">BIP-9信号与激活</a></figure><figure id="78d8d219-a3ba-4023-9e8b-41ca5bea2b49" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/BIP-34%E4%BF%A1%E5%8F%B7%E4%B8%8E%E6%BF%80%E6%B4%BB%2078d8d219a3ba40239e8b41ca5bea2b49.html">BIP-34信号与激活</a></figure><figure id="93fb1dce-98bb-4e4b-8fb3-9ad947847889" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/BIPs%20%E6%A6%82%E8%BF%B0%2093fb1dce98bb4e4b8fb39ad947847889.html">BIPs 概述</a></figure><figure id="644dcdde-a6bd-4a10-a20c-4333eb13478e" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/Bloom%E8%BF%87%E6%BB%A4%E5%99%A8%20644dcddea6bd4a10a20c4333eb13478e.html">Bloom过滤器</a></figure><figure id="e7da79e9-97bb-495f-ad4d-1b08d04b60af" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/Coinbase%E5%A5%96%E5%8A%B1%E5%92%8C%E7%9F%BF%E5%B7%A5%E8%B4%B9%20e7da79e997bb495fad4d1b08d04b60af.html">Coinbase奖励和矿工费</a></figure><figure id="a35fda57-a102-4c8d-84eb-05fda91c2cc5" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/Coinbase%E4%BA%A4%E6%98%93%20a35fda57a1024c8d84eb05fda91c2cc5.html">Coinbase交易</a></figure><figure id="bc015e98-21ae-4a5e-ac90-98372162da19" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/ECDSA%E6%A4%AD%E5%9C%86%E6%9B%B2%E7%BA%BF%E6%95%B0%E5%AD%97%E7%AD%BE%E5%90%8D%E7%AE%97%E6%B3%95%20bc015e9821ae4a5eac9098372162da19.html">ECDSA椭圆曲线数字签名算法</a></figure><figure id="42c0a964-15f2-4d16-97c1-71dd2ca9bc5c" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/Kickstarter%EF%BC%88Lighthouse%EF%BC%89%2042c0a96415f24d1697c171dd2ca9bc5c.html">Kickstarter（Lighthouse）</a></figure><figure id="639a6820-888c-42b5-ac26-140c53d59f26" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/Median-Time-Past%20639a6820888c42b5ac26140c53d59f26.html">Median-Time-Past</a></figure><figure id="8aec06eb-4474-41ea-8cd5-b55cbffb06e0" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/P2PKH%208aec06eb447441ea8cd5b55cbffb06e0.html">P2PKH</a></figure><figure id="de1f32f2-78e9-43ed-afe1-8be9488dc746" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/P2P%E7%9F%BF%E6%B1%A0%20de1f32f278e943edafe18be9488dc746.html">P2P矿池</a></figure><figure id="beaa9a1e-7d95-4a7f-8d6b-8d6ebb0610ed" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/P2P%E8%AE%A4%E8%AF%81%E5%92%8C%E5%8A%A0%E5%AF%86%20beaa9a1e7d954a7f8d6b8d6ebb0610ed.html">P2P认证和加密</a></figure><figure id="ed97706d-121c-4ec4-8bfb-072a77923670" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/P2P%E7%BD%91%E7%BB%9C%E6%9E%B6%E6%9E%84%20ed97706d121c4ec48bfb072a77923670.html">P2P网络架构</a></figure><figure id="33478c7e-8465-43e6-836a-e7a3e4fe0486" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/P2SH%EF%BC%88Pay-to-Script-Hash)%2033478c7e846543e6836ae7a3e4fe0486.html">P2SH（Pay-to-Script-Hash)</a></figure><figure id="54f6a65a-2300-48ff-8539-4bc7821d1831" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/PoW%E5%B7%A5%E4%BD%9C%E9%87%8F%E8%AF%81%E6%98%8E%E5%85%B1%E8%AF%86%E6%9C%BA%E5%88%B6%2054f6a65a230048ff85394bc7821d1831.html">PoW工作量证明共识机制</a></figure><figure id="d1f4ffdf-67ea-45b2-9c51-79ba074d7bf5" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/Proof-of-%20Existence%E6%95%B0%E5%AD%97%E5%85%AC%E8%AF%81%20d1f4ffdf67ea45b29c5179ba074d7bf5.html">Proof-of- Existence数字公证</a></figure><figure id="f399214d-c5b5-4d5c-8a1a-fe099eb1678d" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/SIGNHASH%E7%B1%BB%E5%9E%8B%20f399214dc5b54d5c8a1afe099eb1678d.html">SIGNHASH类型</a></figure><figure id="3fbca261-4bde-4a98-bcff-059439b0ee21" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/SPV%E8%8A%82%E7%82%B9%E4%BD%BF%E7%94%A8Bloom%E8%BF%87%E6%BB%A4%E5%99%A8%203fbca2614bde4a98bcff059439b0ee21.html">SPV节点使用Bloom过滤器</a></figure><figure id="907c3e5a-f90a-4fd2-8ade-dd9686c3eb31" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/Tor%E7%BD%91%E7%BB%9C%E4%BC%A0%E8%BE%93%20907c3e5af90a4fd28adedd9686c3eb31.html">Tor网络传输</a></figure><figure id="8983b59c-707f-43ed-8acc-4cc1775d6266" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E6%AF%94%E7%89%B9%E5%B8%81%E6%B5%8B%E8%AF%95%E7%BD%91%E7%BB%9C%208983b59c707f43ed8acc4cc1775d6266.html">比特币测试网络</a></figure><figure id="b64ccde2-a550-4cc4-8be2-d49fb17808a2" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E6%AF%94%E7%89%B9%E5%B8%81%E5%AD%98%E5%82%A8%E5%B1%82%20b64ccde2a5504cc48be2d49fb17808a2.html">比特币存储层</a></figure><figure id="17fb2fed-465a-499c-b074-c8794270a21c" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E6%AF%94%E7%89%B9%E5%B8%81%E5%9C%B0%E5%9D%80%E7%9A%84%E5%BD%A2%E6%88%90%2017fb2fed465a499cb074c8794270a21c.html">比特币地址的形成</a></figure><figure id="17548287-c0d2-4ff9-8e7a-a8d457740f6e" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E6%AF%94%E7%89%B9%E5%B8%81%E7%9A%84%E5%8E%86%E5%8F%B2%E5%8F%91%E5%B1%95%2017548287c0d24ff98e7aa8d457740f6e.html">比特币的历史发展</a></figure><figure id="11920a70-5aa0-480a-bdfc-a60af94df0f8" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E6%AF%94%E7%89%B9%E5%B8%81%E5%85%B1%E8%AF%86%E5%B1%82%E6%A6%82%E8%BF%B0%2011920a705aa0480abdfca60af94df0f8.html">比特币共识层概述</a></figure><figure id="f77564f8-6925-44a5-a064-100de97245f0" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E6%AF%94%E7%89%B9%E5%B8%81%E6%BF%80%E5%8A%B1%E5%B1%82%E6%A6%82%E8%BF%B0%20f77564f8692544a5a064100de97245f0.html">比特币激励层概述</a></figure><figure id="aeb62b52-2f1f-4278-8571-48358e4131be" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E6%AF%94%E7%89%B9%E5%B8%81%E6%8E%A5%E5%8F%A3%E5%B1%82%20aeb62b522f1f4278857148358e4131be.html">比特币接口层</a></figure><figure id="56bd56f5-dcc3-485e-aecd-fff7947b0495" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E6%AF%94%E7%89%B9%E5%B8%81%E9%92%B1%E5%8C%85%E5%AE%9A%E4%B9%89%EF%BC%88%E6%AF%94%E7%89%B9%E5%B8%81%E5%AE%89%E5%85%A8%EF%BC%89%2056bd56f5dcc3485eaecdfff7947b0495.html">比特币钱包定义（比特币安全）</a></figure><figure id="7cc927e3-8059-4121-8b1b-5bf58a4550d6" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E6%AF%94%E7%89%B9%E5%B8%81%E5%8C%BA%E5%9D%97%E7%BB%93%E6%9E%84%EF%BC%88%E5%8C%BA%E5%9D%97%E5%A4%B4%E3%80%81%E5%8C%BA%E5%9D%97%E4%BD%93%EF%BC%89%207cc927e3805941218b1b5bf58a4550d6.html">比特币区块结构（区块头、区块体）</a></figure><figure id="5b6bfa2a-69a6-4474-a01e-0821bbf28518" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E6%AF%94%E7%89%B9%E5%B8%81%E6%95%B0%E6%8D%AE%E5%B1%82%E6%A6%82%E8%BF%B0%205b6bfa2a69a64474a01e0821bbf28518.html">比特币数据层概述</a></figure><figure id="9e45a303-0623-4947-9edf-8a8d13a1b7e5" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E6%AF%94%E7%89%B9%E5%B8%81%E7%BD%91%E7%BB%9C%E5%B1%82%E6%A6%82%E8%BF%B0%209e45a303062349479edf8a8d13a1b7e5.html">比特币网络层概述</a></figure><figure id="4b8843ba-4a99-461c-8612-7fa369094fec" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E6%AF%94%E7%89%B9%E5%B8%81%E7%89%A9%E7%90%86%E5%AD%98%E5%82%A8%EF%BC%88%E6%AF%94%E7%89%B9%E5%B8%81%E5%AE%89%E5%85%A8%EF%BC%89%204b8843ba4a99461c86127fa369094fec.html">比特币物理存储（比特币安全）</a></figure><figure id="fb3e08af-6d69-4965-8f52-ba74db34b541" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E6%AF%94%E7%89%B9%E5%B8%81%E5%BA%94%E7%94%A8%E5%B1%82%E6%A6%82%E8%BF%B0%20fb3e08af6d6949658f52ba74db34b541.html">比特币应用层概述</a></figure><figure id="e4629faf-bf71-46e2-beea-152d86e8777f" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E6%A0%87%E5%87%86%E7%B1%BBBIP%20e4629fafbf7146e2beea152d86e8777f.html">标准类BIP</a></figure><figure id="e741279f-c6a7-472b-931a-f0330498b0b8" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E6%89%93%E5%8C%85%E4%BA%A4%E6%98%93%EF%BC%88%E6%8C%96%E7%9F%BF%EF%BC%89%20e741279fc6a7472b931af0330498b0b8.html">打包交易（挖矿）</a></figure><figure id="87b32edc-30b1-40dd-b834-fb3ddfe3c528" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E7%AC%AC%E4%B8%89%E6%96%B9%E6%8E%A5%E5%8F%A3%E8%8A%82%E7%82%B9%2087b32edc30b140ddb834fb3ddfe3c528.html">第三方接口节点</a></figure><figure id="e455afbc-3df6-46d1-8f2a-9f4f1a1f1784" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E5%A4%9A%E9%87%8D%E7%AD%BE%E5%90%8D%20e455afbc3df646d18f2a9f4f1a1f1784.html">多重签名</a></figure><figure id="83096c4e-8968-4fab-908d-3aabb1f93de0" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E9%9D%9E%E7%A1%AE%E5%AE%9A%E6%80%A7%EF%BC%88%E9%9A%8F%E6%9C%BA%EF%BC%89%E9%92%B1%E5%8C%85%2083096c4e89684fab908d3aabb1f93de0.html">非确定性（随机）钱包</a></figure><figure id="fe32bb89-b04e-4f82-8b5b-ec1f683439eb" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E5%88%86%E5%B1%82%E7%A1%AE%E5%AE%9A%E6%80%A7%E9%92%B1%E5%8C%85%EF%BC%88HD%E9%92%B1%E5%8C%85%EF%BC%89%20fe32bb89b04e4f828b5bec1f683439eb.html">分层确定性钱包（HD钱包）</a></figure><figure id="2f7d8464-3552-435c-9a12-cf2814950416" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E5%88%86%E5%8F%89%E6%A6%82%E8%BF%B0%202f7d84643552435c9a12cf2814950416.html">分叉概述</a></figure><figure id="58781da4-1b1a-4b98-a2b8-b14b92ea8e6b" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E5%85%AC%E9%92%A5%E5%92%8C%E7%A7%81%E9%92%A5%2058781da41b1a4b98a2b8b14b92ea8e6b.html">公钥和私钥</a></figure><figure id="f3f006fe-202c-487c-8109-eb4ab9327a5f" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E5%85%B1%E8%AF%86%E6%94%BB%E5%87%BB%E6%A6%82%E8%BF%B0%20f3f006fe202c487c8109eb4ab9327a5f.html">共识攻击概述</a></figure><figure id="33968e49-0b32-4c83-b3b6-b749b523a30b" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E6%9E%84%E5%BB%BA%E5%8C%BA%E5%9D%97%E5%A4%B4%EF%BC%88%E6%8C%96%E7%9F%BF%EF%BC%89%2033968e490b324c83b3b6b749b523a30b.html">构建区块头（挖矿）</a></figure><figure id="00dc46d0-4f4d-4582-8561-f17c510d5d53" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E5%AD%A4%E5%9D%97%2000dc46d04f4d45828561f17c510d5d53.html">孤块</a></figure><figure id="d32c2d70-23b8-433b-b9f6-3f0a74668227" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E5%AD%A4%E7%AB%8B%E4%BA%A4%E6%98%93%E6%B1%A0%20d32c2d7023b8433bb9f63f0a74668227.html">孤立交易池</a></figure><figure id="2251f70b-7da4-4fa6-82b4-f24f2508867b" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E8%BF%87%E7%A8%8B%E7%B1%BBBIP%202251f70b7da44fa682b4f24f2508867b.html">过程类BIP</a></figure><figure id="a31fcac8-a5f8-4638-9236-1b303cc46ebb" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E5%93%88%E5%B8%8C%E6%97%B6%E9%97%B4%E9%94%81%E5%90%88%E7%BA%A6%20a31fcac8a5f8463892361b303cc46ebb.html">哈希时间锁合约</a></figure><figure id="bc2f6874-be65-46e2-861e-7dc1e9842ae8" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E5%90%88%E7%BA%A6%E5%B8%81%20bc2f6874be6546e2861e7dc1e9842ae8.html">合约币</a></figure><figure id="4ce001a3-e487-48bd-9910-ce4bcb664f50" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E5%8A%A0%E5%AF%86%E5%92%8C%E8%AE%A4%E8%AF%81%E8%BF%9E%E6%8E%A5%E6%A6%82%E8%BF%B0%204ce001a3e48748bd9910ce4bcb664f50.html">加密和认证连接概述</a></figure><figure id="f9554fa9-d532-4556-b015-f52bec4c139c" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E5%8A%A0%E5%AF%86%E7%A7%81%E9%92%A5%EF%BC%88BIP-38%EF%BC%89%20f9554fa9d5324556b015f52bec4c139c.html">加密私钥（BIP-38）</a></figure><figure id="447fcf07-20a7-486d-ba3c-c17de23b1633" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E6%A3%80%E6%9F%A5%E9%94%81%E5%AE%9A%E6%97%B6%E9%97%B4%E9%AA%8C%E8%AF%81%EF%BC%88Check%20Lock%20Time%20Verify%20CLTV%EF%BC%89%20447fcf0720a7486dba3cc17de23b1633.html">检查锁定时间验证（Check Lock Time Verify CLTV）</a></figure><figure id="191ab4d5-2630-40b9-b9ad-1eeaf3501681" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E7%AE%80%E6%98%93%E6%94%AF%E4%BB%98%E9%AA%8C%E8%AF%81%E8%8A%82%E7%82%B9%20191ab4d5263040b9b9ad1eeaf3501681.html">简易支付验证节点</a></figure><figure id="e55fe719-92ec-46be-9cfd-e48330769629" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E4%BA%A4%E6%98%93%E6%B1%A0%20e55fe71992ec46be9cfde48330769629.html">交易池</a></figure><figure id="62e158df-4b1d-4bb3-9892-ba4d3870077d" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E4%BA%A4%E6%98%93%E7%9A%84%E7%8B%AC%E7%AB%8B%E6%A0%A1%E9%AA%8C%2062e158df4b1d4bb39892ba4d3870077d.html">交易的独立校验</a></figure><figure id="91450c87-bd8a-4c92-b319-194f7ef70e06" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E4%BA%A4%E6%98%93%E7%9A%84%E6%9E%84%E5%BB%BA%2091450c87bd8a4c92b319194f7ef70e06.html">交易的构建</a></figure><figure id="1d949ac5-1373-4764-9fb4-12e6111185d2" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E4%BA%A4%E6%98%93%E5%B9%BF%E6%92%AD%201d949ac5137347649fb412e6111185d2.html">交易广播</a></figure><figure id="291f4c04-a2aa-4542-9193-8ef3876d00aa" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E4%BA%A4%E6%98%93%E8%84%9A%E6%9C%AC%E6%89%A7%E8%A1%8C%E6%9C%BA%E5%88%B6%20291f4c04a2aa454291938ef3876d00aa.html">交易脚本执行机制</a></figure><figure id="76f4655b-032f-40fa-9ee0-e3f0b9a59d54" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E4%BA%A4%E6%98%93%E9%93%BE%2076f4655b032f40fa9ee0e3f0b9a59d54.html">交易链</a></figure><figure id="c00eea89-ca8c-46c6-941f-64400b2510ba" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E4%BA%A4%E6%98%93%E8%BE%93%E5%85%A5%E3%80%81%E8%BE%93%E5%87%BA%20c00eea89ca8c46c6941f64400b2510ba.html">交易输入、输出</a></figure><figure id="a0693a00-8ae6-4c43-8efa-acb9f42e8ef4" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E4%BA%A4%E6%98%93%E9%94%81%E5%AE%9A%E6%97%B6%E9%97%B4%20a0693a008ae64c438efaacb9f42e8ef4.html">交易锁定时间</a></figure><figure id="a6764c34-8b23-49ed-b816-4b35f52716bb" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E4%BA%A4%E6%98%93%E5%BD%A2%E5%BC%8F%20a6764c348b2349edb8164b35f52716bb.html">交易形式</a></figure><figure id="d9b35f1f-3eb0-4668-be4d-c1aa015aa77a" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E8%8A%82%E7%82%B9%E5%9C%B0%E5%9D%80%E5%B9%BF%E6%92%AD%20d9b35f1f3eb04668be4dc1aa015aa77a.html">节点地址广播</a></figure><figure id="1fc437a5-f585-450d-8bad-92b0cce94785" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E8%8A%82%E7%82%B9%E5%8F%91%E7%8E%B0%E7%AE%A1%E7%90%86%201fc437a5f585450d8bad92b0cce94785.html">节点发现管理</a></figure><figure id="d654b095-e157-46cd-aba1-098a7461cad8" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E9%9D%93%E5%8F%B7%E5%9C%B0%E5%9D%80%20d654b095e15746cdaba1098a7461cad8.html">靓号地址</a></figure><figure id="1e0202bd-0eb8-46c3-9f34-ce9e9df82d15" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E5%8F%AF%E8%B7%AF%E7%94%B1%E7%9A%84%E6%94%AF%E4%BB%98%E9%80%9A%E9%81%93%EF%BC%88%E9%97%AA%E7%94%B5%E7%BD%91%E7%BB%9C%EF%BC%89%201e0202bd0eb846c39f34ce9e9df82d15.html">可路由的支付通道（闪电网络）</a></figure><figure id="d4a471f7-f641-4b19-b9b6-603d73667501" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E7%9F%BF%E6%B1%A0%E6%A6%82%E8%BF%B0%20d4a471f7f6414b19b9b6603d73667501.html">矿池概述</a></figure><figure id="03a4640d-0aee-405d-998e-7552038ceedc" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E4%BA%86%E8%A7%A3%E6%AF%94%E7%89%B9%E5%B8%81%E9%92%B1%E5%8C%85%E7%9A%84%E5%8A%9F%E8%83%BD%2003a4640d0aee405d998e7552038ceedc.html">了解比特币钱包的功能</a></figure><figure id="3a89e5b5-51e0-422a-a400-ad5d5dbb5f55" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E5%86%B7%E9%92%B1%E5%8C%85%203a89e5b551e0422aa400ad5d5dbb5f55.html">冷钱包</a></figure><figure id="cf511b82-906e-4b90-931f-60653a700a51" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E9%BB%98%E5%85%8B%E5%B0%94%E6%A0%91%20cf511b82906e4b90931f60653a700a51.html">默克尔树</a></figure><figure id="6987f2f7-2493-4675-b799-b37a1d927936" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E9%BB%98%E5%85%8B%E5%B0%94%E6%A0%91%E5%92%8C%E7%AE%80%E5%8D%95%E6%94%AF%E4%BB%98%E9%AA%8C%E8%AF%81%EF%BC%88SPV%EF%BC%89%206987f2f724934675b799b37a1d927936.html">默克尔树和简单支付验证（SPV）</a></figure><figure id="be224f62-7320-48e5-94e5-efc72bdc407d" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E9%9A%BE%E5%BA%A6%E7%9B%AE%E6%A0%87%E4%B8%8E%E9%9A%BE%E5%BA%A6%E8%B0%83%E6%95%B4%EF%BC%88%E6%8C%96%E7%9F%BF%EF%BC%89%20be224f62732048e594e5efc72bdc407d.html">难度目标与难度调整（挖矿）</a></figure><figure id="dfbf4a90-25f0-409b-b119-b60e7d2cc6f7" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E9%92%B1%E5%8C%85%E9%80%89%E6%8B%A9%20dfbf4a9025f0409bb119b60e7d2cc6f7.html">钱包选择</a></figure><figure id="fe4e31a3-f386-4d86-a767-2f094ebb1c45" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E9%92%B1%E5%8C%85%E5%8A%A9%E8%AE%B0%E8%AF%8D%EF%BC%88BIP-39%EF%BC%89%20fe4e31a3f3864d86a7672f094ebb1c45.html">钱包助记词（BIP-39）</a></figure><figure id="9e96ba94-5ede-42f5-a509-df7c725ca4ee" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E8%BD%BB%E8%8A%82%E7%82%B9%209e96ba945ede42f5a509df7c725ca4ee.html">轻节点</a></figure><figure id="7977885c-bca7-42a3-a284-dd028038bf6f" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E5%8C%BA%E5%9D%97%E5%B9%BF%E6%92%AD%E4%B8%8E%E5%90%8C%E6%AD%A5%207977885cbca742a3a284dd028038bf6f.html">区块广播与同步</a></figure><figure id="88821ace-8dc2-4762-91b5-f34180388edb" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E5%8C%BA%E5%9D%97%E9%93%BE%E6%8E%A5%E6%88%90%E4%B8%BA%E5%8C%BA%E5%9D%97%E9%93%BE%2088821ace8dc2476291b5f34180388edb.html">区块链接成为区块链</a></figure><figure id="8aa236ab-89bf-4fe4-9cf7-52da80327bd3" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E5%85%A8%E8%8A%82%E7%82%B9%208aa236ab89bf4fe49cf752da80327bd3.html">全节点</a></figure><figure id="7b9b496a-f22a-47aa-95a2-ba07eff0e438" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E5%85%A8%E8%8A%82%E7%82%B9%E6%9E%84%E5%BB%BA%207b9b496af22a47aa95a2ba07eff0e438.html">全节点构建</a></figure><figure id="5b6da529-19ee-481c-bc13-39ad9b1fae0a" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E7%A1%AE%E5%AE%9A%E6%80%A7%EF%BC%88%E5%9F%BA%E4%BA%8ESeeding%EF%BC%89%E9%92%B1%E5%8C%85%205b6da52919ee481cbc1339ad9b1fae0a.html">确定性（基于Seeding）钱包</a></figure><figure id="db06a105-47ef-40e6-9f56-432ab3fce0eb" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E7%83%AD%E9%92%B1%E5%8C%85%EF%BC%88%E6%9C%AC%E5%9C%B0%E9%92%B1%E5%8C%85%E3%80%81%E5%9C%A8%E7%BA%BF%E9%92%B1%E5%8C%85%E3%80%81%E5%A4%9A%E9%87%8D%E9%AA%8C%E8%AF%81%E9%92%B1%E5%8C%85%E3%80%81%E9%93%BE%E4%B8%8B%E9%92%B1%E5%8C%85%EF%BC%89%20db06a10547ef40e69f56432ab3fce0eb.html">热钱包（本地钱包、在线钱包、多重验证钱包、链下钱包）</a></figure><figure id="cea11005-afee-48fd-a9dc-8c379f2fa9ed" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E5%A6%82%E4%BD%95%E5%BE%97%E5%88%B0%E7%AC%AC%E4%B8%80%E4%B8%AA%E6%AF%94%E7%89%B9%E5%B8%81%20cea11005afee48fda9dc8c379f2fa9ed.html">如何得到第一个比特币</a></figure><figure id="299de3e2-c081-4f53-9aeb-a17ad34d5b10" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E5%A6%82%E4%BD%95%E8%8E%B7%E5%BE%97%E6%AF%94%E7%89%B9%E5%B8%81%E7%8E%B0%E6%9C%89%E4%BB%B7%E6%A0%BC%E3%80%81%E6%AF%94%E7%89%B9%E5%B8%81%E7%9A%84%E6%8E%A5%E5%8F%97%E4%B8%8E%E5%8F%91%E9%80%81%20299de3e2c0814f539aeba17ad34d5b10.html">如何获得比特币现有价格、比特币的接受与发送</a></figure><figure id="819071c9-7c00-4aca-bac2-ff89c378da31" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E8%BD%AF%E5%88%86%E5%8F%89%E4%BB%8B%E7%BB%8D%20819071c97c004acabac2ff89c378da31.html">软分叉介绍</a></figure><figure id="3452a02f-b894-4db1-9c46-4363f403c955" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E8%BD%AF%E5%88%86%E5%8F%89%E4%BF%A1%E5%8F%B7%E6%A6%82%E8%BF%B0%203452a02fb8944db19c464363f403c955.html">软分叉信号概述</a></figure><figure id="13c743e0-ab67-4b4a-acde-63e516b1b78a" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E6%97%B6%E9%97%B4%E9%94%81%E6%A6%82%E8%BF%B0%2013c743e0ab674b4aacde63e516b1b78a.html">时间锁概述</a></figure><figure id="8a4ed854-647d-4657-ad36-0362c748ea81" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E6%95%B0%E6%8D%AE%E8%AE%B0%E5%BD%95%E8%BE%93%E5%87%BA%EF%BC%88RETURN%E6%93%8D%E4%BD%9C%E7%AC%A6%EF%BC%89%208a4ed854647d4657ad360362c748ea81.html">数据记录输出（RETURN操作符）</a></figure><figure id="124733b5-f0c6-40f9-af61-6d9d7a5a4f27" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E5%8F%8C%E8%8A%B1%E6%94%BB%E5%87%BB%20124733b5f0c640f9af616d9d7a5a4f27.html">双花攻击</a></figure><figure id="b7348811-b6ba-4c4c-8de5-b534533622d5" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E9%94%81%E5%AE%9A%E8%84%9A%E6%9C%AC%E3%80%81%E8%A7%A3%E9%94%81%E8%84%9A%E6%9C%AC%20b7348811b6ba4c4c8de5b534533622d5.html">锁定脚本、解锁脚本</a></figure><figure id="6b7463b3-afd3-4f20-9b68-6a573e589fbd" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E6%89%98%E7%AE%A1%E7%9F%BF%E6%B1%A0%206b7463b3afd34f209b686a573e589fbd.html">托管矿池</a></figure><figure id="45a7b68b-88e8-4702-8de6-a5ecd431e1ef" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E6%8C%96%E7%9F%BF%E4%B8%8E%E7%AE%97%E5%8A%9B%2045a7b68b88e847028de6a5ecd431e1ef.html">挖矿与算力</a></figure><figure id="10c79e2a-e736-403a-bfa6-3d0d4b208744" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E7%9B%B8%E5%AF%B9%E6%97%B6%E9%97%B4%E9%94%81%2010c79e2ae736403abfa63d0d4b208744.html">相对时间锁</a></figure><figure id="c7356efd-5bde-43c5-b6d3-dd1324a7cf6e" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E6%A0%A1%E9%AA%8C%E6%96%B0%E5%8C%BA%E5%9D%97%20c7356efd5bde43c5b6d3dd1324a7cf6e.html">校验新区块</a></figure><figure id="9f8a11b7-0cc6-4aad-a7bc-cd8d7b89e2df" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E4%BF%A1%E6%81%AF%E7%B1%BBBIP%209f8a11b70cc64aada7bccd8d7b89e2df.html">信息类BIP</a></figure><figure id="a1af2887-62fe-4fb3-bb35-9657ac19ff33" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E9%80%89%E6%8B%A9%E6%AF%94%E7%89%B9%E5%B8%81%E9%92%B1%E5%8C%85%E5%BA%94%E7%94%A8%20a1af288762fe4fb3bb359657ac19ff33.html">选择比特币钱包应用</a></figure><figure id="ce803c38-ded2-40bc-b438-19c6b2fa8186" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E9%9C%80%E8%A6%81%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%8A%9F%E8%83%BD%20ce803c38ded240bcb43819c6b2fa8186.html">应用程序需要的基本功能</a></figure><figure id="2b607dca-b719-4433-8e03-3f0cf9c45e8d" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E7%A1%AC%E5%88%86%E5%8F%89%202b607dcab71944338e033f0cf9c45e8d.html">硬分叉</a></figure><figure id="358fb830-7b75-4cca-98b9-4ea6f2d0f82a" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E5%9C%A8%E6%AF%94%E7%89%B9%E5%B8%81%E4%B9%8B%E5%89%8D%E5%87%BA%E7%8E%B0%E7%9A%84%E6%95%B0%E5%AD%97%E8%B4%A7%E5%B8%81%20358fb8307b754cca98b94ea6f2d0f82a.html">在比特币之前出现的数字货币</a></figure><figure id="ef4dc99e-8550-4072-a5ab-f9ef8b1a1433" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E8%B4%A6%E6%9C%AC%E5%9C%B0%E5%9D%80%20ef4dc99e85504072a5abf9ef8b1a1433.html">账本地址</a></figure><figure id="050346e0-97b9-4348-910d-36df0021d2ad" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E8%B4%A6%E6%9C%AC%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%9E%8BUTXO%20050346e097b94348910d36df0021d2ad.html">账本数据模型UTXO</a></figure><figure id="e4271789-70ac-44d6-8f53-8083b8c031f3" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E6%89%BE%E9%9B%B6%EF%BC%88%E6%AF%94%E7%89%B9%E5%B8%81%E4%BA%A4%E6%98%93%EF%BC%89%20e427178970ac44d68f538083b8c031f3.html">找零（比特币交易）</a></figure><figure id="c879f861-86e6-4a00-9140-7f3bf8fe7afc" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E9%92%88%E5%AF%B9Fee%20Sniping%20%E7%9A%84%20%E6%97%B6%E9%97%B4%E9%94%81%E5%AE%9A%20c879f86186e64a0091407f3bf8fe7afc.html">针对Fee Sniping 的 时间锁定</a></figure><figure id="c88f2b00-7309-4b17-9635-1b4f95184c02" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E6%94%AF%E4%BB%98%E9%80%9A%E9%81%93%20c88f2b0073094b1796351b4f95184c02.html">支付通道</a></figure><figure id="e7d3fe8a-e1fc-480f-aaaf-bffd11f12b3d" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E4%B8%AD%E6%9C%AC%E8%81%AA%E7%99%BD%E7%9A%AE%E4%B9%A6%20e7d3fe8ae1fc480faaafbffd11f12b3d.html">中本聪白皮书</a></figure><figure id="362a755f-f2a5-48be-aec6-e7b54b654f7b" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E7%8A%B6%E6%80%81%E9%80%9A%E9%81%93%20362a755ff2a548beaec6e7b54b654f7b.html">状态通道</a></figure><p id="3648819d-56a2-44f3-96cb-5f61b39df16c" class="">
+</p><p id="6a0712bf-aca5-4a82-b548-fe929c305cd0" class="">
+</p><p id="2ea5e079-1264-4ade-9cb6-2bb62707a8ec" class="">
+</p></details></li></ul><p id="afa3e5e0-3012-4946-9688-a65a5967862c" class="">
+</p></div><div id="1a6d0bbc-e21b-4ca9-b660-5a91f35f82c6" style="width:33.33333333333333%" class="column"><ul id="baa819c1-8fef-41a7-9da8-f0ca8edf28bd" class="block-color-teal_background toggle"><li><details open=""><summary><mark class="highlight-purple"><strong><em>以太坊</em></strong></mark></summary><figure id="99621851-5def-475c-b246-76056908fa76" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/DevP2P%20996218515def475cb24676056908fa76.html">DevP2P</a></figure><figure id="8d561029-b747-4bfc-b7a0-61bca92316b2" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/DPoS%E5%A7%94%E6%89%98%E6%9D%83%E7%9B%8A%E8%AF%81%E6%98%8E%208d561029b7474bfcb7a061bca92316b2.html">DPoS委托权益证明</a></figure><figure id="3930124b-7dc0-46fa-8b73-1f225d423df6" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/EIP-606-Homestead%E5%88%86%E5%8F%89%203930124b7dc046fa8b731f225d423df6.html">EIP-606-Homestead分叉</a></figure><figure id="8e5628ff-c275-4824-9188-f48c88947bb5" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/EIP-609-%E6%8B%9C%E5%8D%A0%E5%BA%AD%E5%88%86%E5%8F%89%208e5628ffc27548249188f48c88947bb5.html">EIP-609-拜占庭分叉</a></figure><figure id="6fd5925b-4528-4d36-8f06-82478fa96fda" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/EIP-779-DAO%E5%88%86%E5%8F%89%206fd5925b45284d368f0682478fa96fda.html">EIP-779-DAO分叉</a></figure><figure id="c9ae44da-27be-4d2e-98f2-de2ed564a6d8" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/EIP-1013-%E5%90%9B%E5%A3%AB%E5%9D%A6%E4%B8%81%E5%A0%A1%E5%88%86%E5%8F%89%20c9ae44da27be4d2e98f2de2ed564a6d8.html">EIP-1013-君士坦丁堡分叉</a></figure><figure id="b1973fa8-e5e0-4652-9f71-cbb8e694aecb" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/EIP-1679-%E4%BC%8A%E6%96%AF%E5%9D%A6%E5%B8%83%E5%B0%94%E5%88%86%E5%8F%89%20b1973fa8e5e046529f71cbb8e694aecb.html">EIP-1679-伊斯坦布尔分叉</a></figure><figure id="b08b0b58-958b-4ac8-95da-585cc5a36518" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/EIP%E7%9A%84%E5%9B%9B%E4%B8%AA%E9%98%B6%E6%AE%B5%20b08b0b58958b4ac895da585cc5a36518.html">EIP的四个阶段</a></figure><figure id="108c3963-7d20-4a03-8302-b8c3c9c14eb3" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/ERC20%20108c39637d204a038302b8c3c9c14eb3.html">ERC20</a></figure><figure id="08060437-8ff4-4406-8bbf-2f5c68650a2c" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/ERC223%20080604378ff444068bbf2f5c68650a2c.html">ERC223</a></figure><figure id="d9cdf4ea-cd11-4e38-8c13-728fcdd081ce" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/ERC721%20d9cdf4eacd114e388c13728fcdd081ce.html">ERC721</a></figure><figure id="b6b81d13-7471-4d2c-888b-f79d714db09c" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/ERC777%20b6b81d1374714d2c888bf79d714db09c.html">ERC777</a></figure><figure id="78c43a62-8a7f-4028-a470-25d5f617d86b" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/EVM%E4%BB%A5%E5%A4%AA%E5%9D%8A%E8%99%9A%E6%8B%9F%E6%9C%BA%2078c43a628a7f4028a47025d5f617d86b.html">EVM以太坊虚拟机</a></figure><figure id="4bf2801b-c6eb-43fc-b470-7ef64fefcb5f" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/HD%E9%92%B1%E5%8C%85%EF%BC%88BIP-32%E3%80%81BIP-44%EF%BC%89%204bf2801bc6eb43fcb4707ef64fefcb5f.html">HD钱包（BIP-32、BIP-44）</a></figure><figure id="3db3953b-a957-4940-9b05-c6412a87dfa8" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/Metamask%E7%9A%84%E4%BD%BF%E7%94%A8%203db3953ba95749409b05c6412a87dfa8.html">Metamask的使用</a></figure><figure id="d265082a-0777-497a-a92a-4a743e3f4b72" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/NPoS%E6%8F%90%E5%90%8D%E6%9D%83%E7%9B%8A%E8%AF%81%E6%98%8E%20d265082a0777497aa92a4a743e3f4b72.html">NPoS提名权益证明</a></figure><figure id="efcdd36b-3878-4168-bea1-64ab7e11b6d1" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/Polkadot%E5%8D%8F%E8%AE%AE%20efcdd36b38784168bea164ab7e11b6d1.html">Polkadot协议</a></figure><figure id="ef725d9b-8a9f-45f3-8d0a-2eec9b34cd84" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/PoSA%E6%9D%83%E5%A8%81%E6%9D%83%E7%9B%8A%E8%AF%81%E6%98%8E%20ef725d9b8a9f45f38d0a2eec9b34cd84.html">PoSA权威权益证明</a></figure><figure id="1504a4e3-f8e5-4841-b37c-984bf5e80cd6" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/PoS%E6%9D%83%E7%9B%8A%E8%AF%81%E6%98%8E%E5%85%B1%E8%AF%86%E6%9C%BA%E5%88%B6%E4%BB%8B%E7%BB%8D%201504a4e3f8e54841b37c984bf5e80cd6.html">PoS权益证明共识机制介绍</a></figure><figure id="31ab3293-2b22-4479-809f-75e7e46e09bb" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/PoW%E5%B7%A5%E4%BD%9C%E9%87%8F%E8%AF%81%E6%98%8E%E5%85%B1%E8%AF%86%E6%9C%BA%E5%88%B6Ethash%E7%AE%97%E6%B3%95%2031ab32932b224479809f75e7e46e09bb.html">PoW工作量证明共识机制Ethash算法</a></figure><figure id="980f25f8-bafc-4a74-ba84-ba3ec538f8a5" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/Solidity%E8%AF%AD%E8%A8%80%E4%BB%8B%E7%BB%8D%20980f25f8bafc4a74ba84ba3ec538f8a5.html">Solidity语言介绍</a></figure><figure id="9c014650-57ca-424a-b772-f363f9c4cd9b" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/The%20DAO%E6%94%BB%E5%87%BB%209c01465057ca424ab772f363f9c4cd9b.html">The DAO攻击</a></figure><figure id="45609af5-80b6-42ab-9039-d962b18702a8" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/Token%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%8E%A5%E5%8F%A3%2045609af580b642ab9039d962b18702a8.html">Token的基本接口</a></figure><figure id="d3b4e37e-5b73-47be-a430-52ef64866518" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/Token%E4%BB%8B%E7%BB%8D%20d3b4e37e5b7347bea43052ef64866518.html">Token介绍</a></figure><figure id="925fe885-37d1-4d61-8390-f7f0de29e55a" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/Vyper%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E4%BB%8B%E7%BB%8D%20925fe88537d14d618390f7f0de29e55a.html">Vyper编程语言介绍</a></figure><figure id="3d56b982-f49b-4aba-be10-7a334cd6d082" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/Web3%20js%203d56b982f49b4ababe107a334cd6d082.html">Web3.js</a></figure><figure id="53e2de41-8838-424c-a253-e58d5504e3f7" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E6%AF%94%E7%89%B9%E5%B8%81%E5%8C%BA%E5%9D%97%E9%93%BE%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%BC%BA%E9%99%B7%2053e2de418838424ca253e58d5504e3f7.html">比特币区块链系统的缺陷</a></figure><figure id="dc1ea6df-83a0-4128-baa2-d76483663b50" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E5%B8%81%E9%BE%84%20dc1ea6df83a04128baa2d76483663b50.html">币龄</a></figure><figure id="e2988400-22d9-46e1-8375-d9a1a5c23016" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E6%9F%A5%E8%AF%A2%E4%BA%A4%E6%98%93%E5%8E%86%E5%8F%B2%20e298840022d946e18375d9a1a5c23016.html">查询交易历史</a></figure><figure id="da26ea56-3cda-4afd-b3b8-fab8fc3810a5" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E5%87%BA%E5%9D%97%E6%BF%80%E5%8A%B1%20da26ea563cda4afdb3b8fab8fc3810a5.html">出块激励</a></figure><figure id="864e6056-6449-45e8-b54e-3264ef04ba37" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E5%87%BA%E5%9D%97%E9%9A%BE%E5%BA%A6%E8%B0%83%E6%95%B4%E4%B8%8E%E8%AE%A1%E7%AE%97%20864e6056644945e8b54e3264ef04ba37.html">出块难度调整与计算</a></figure><figure id="e6c58884-9b86-41d7-9efb-1e9860c92e47" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E4%BB%8E%E7%A7%8D%E5%AD%90%E5%88%9B%E5%BB%BAHD%E9%92%B1%E5%8C%85%20e6c588849b8641d79efb1e9860c92e47.html">从种子创建HD钱包</a></figure><figure id="4738201f-30d5-4539-8e78-6fc8daa62a5c" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E5%A4%9A%E4%BB%A3%E5%B8%81%E6%A0%87%E5%87%86%EF%BC%88ERC1155%EF%BC%89%204738201f30d545398e786fc8daa62a5c.html">多代币标准（ERC1155）</a></figure><figure id="19c1d537-8124-4131-9e3c-f41ecca24fc0" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E5%A4%9A%E9%87%8D%E7%AD%BE%E5%90%8D%E4%BA%A4%E6%98%93%2019c1d537812441319e3cf41ecca24fc0.html">多重签名交易</a></figure><figure id="95a5639f-e801-4259-bb55-8154976e2895" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E9%9D%9E%E7%A1%AE%E5%AE%9A%EF%BC%88%E9%9A%8F%E6%9C%BA%EF%BC%89%E9%92%B1%E5%8C%85%2095a5639fe8014259bb558154976e2895.html">非确定（随机）钱包</a></figure><figure id="a3659757-88d0-417c-82b6-0d9c0edce01c" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E9%9D%9E%E5%90%8C%E8%B4%A8%E5%8C%96%E4%BB%A3%E5%B8%81%E6%A6%82%E8%A6%81%E4%BB%8B%E7%BB%8D%20a365975788d0417c82b60d9c0edce01c.html">非同质化代币概要介绍</a></figure><figure id="0b260c4b-aefe-4737-b3a5-9e7f4c7cbe1c" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E5%88%86%E7%A6%BB%E7%AD%BE%E5%90%8D%E5%92%8C%E4%BC%A0%E8%BE%93%EF%BC%88%E7%A6%BB%E7%BA%BF%E7%AD%BE%E5%90%8D%EF%BC%89%200b260c4baefe4737b3a59e7f4c7cbe1c.html">分离签名和传输（离线签名）</a></figure><figure id="38c1d5a6-d600-43fc-a809-767765ce6d3d" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E5%90%88%E7%BA%A6%E6%B3%A8%E5%86%8C%EF%BC%88%E4%BA%A4%E6%98%93%EF%BC%89%2038c1d5a6d60043fca809767765ce6d3d.html">合约注册（交易）</a></figure><figure id="8657a8d9-2fac-4b06-860d-492c35086fee" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E4%BA%92%E6%8D%A2%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%9C%B0%E5%9D%80%E5%8D%8F%E8%AE%AEICAP%208657a8d92fac4b06860d492c35086fee.html">互换客户端地址协议ICAP</a></figure><figure id="6ed50e30-6a64-4616-99c0-fac40575c65a" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E5%8A%A0%E5%AF%86%E5%93%88%E5%B8%8C%E5%87%BD%E6%95%B0%20Kecxak256%206ed50e306a64461699c0fac40575c65a.html">加密哈希函数 Kecxak256</a></figure><figure id="ae9d491b-324c-4c84-afc9-f20b26fe91ee" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E5%8A%A0%E5%AF%86%E8%B4%A7%E5%B8%81%E5%8F%91%E8%A1%8C%20ae9d491b324c4c84afc9f20b26fe91ee.html">加密货币发行</a></figure><figure id="61f5eb68-f781-4ac3-91ef-2d5e633a4453" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E4%BA%A4%E6%98%93%E6%B1%A0%2061f5eb68f7814ac391ef2d5e633a4453.html">交易池</a></figure><figure id="613a9966-2527-4367-9d90-90adaf17c124" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E4%BA%A4%E6%98%93%E5%B9%BF%E6%92%AD%20613a9966252743679d9090adaf17c124.html">交易广播</a></figure><figure id="9e33793d-7429-4f6b-bc16-ff65b4d7e5da" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E4%BA%A4%E6%98%93%E6%BF%80%E5%8A%B1%EF%BC%88gas%E3%80%81gasLimit%E3%80%81gasPrice%E3%80%81gas%E9%80%80%E6%AC%BE%EF%BC%89%209e33793d74294f6bbc16ff65b4d7e5da.html">交易激励（gas、gasLimit、gasPrice、gas退款）</a></figure><figure id="bb8bbfef-55c1-4b00-9f05-8fae44cb64c7" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E4%BA%A4%E6%98%93%E7%B1%BB%E5%9E%8B%EF%BC%88%E8%BD%AC%E8%B4%A6%E6%94%AF%E4%BB%98%E3%80%81%E5%88%9B%E5%BB%BA%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6%E3%80%81%E8%B0%83%E7%94%A8%E5%90%88%E7%BA%A6%EF%BC%89%20bb8bbfef55c14b009f058fae44cb64c7.html">交易类型（转账支付、创建智能合约、调用合约）</a></figure><figure id="859bf99f-6ea4-44c9-aa5b-9a8b7fccf000" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E4%BA%A4%E6%98%93%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%20859bf99f6ea444c9aa5b9a8b7fccf000.html">交易数据结构</a></figure><figure id="d05c8ee3-6e1e-4a5b-bec7-302c70b2a577" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E8%8A%82%E7%82%B9%E5%8F%91%E7%8E%B0%E7%AE%A1%E7%90%86%20d05c8ee36e1e4a5bbec7302c70b2a577.html">节点发现管理</a></figure><figure id="771b457c-0b1d-4b0a-b27c-279f4da35b35" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E8%8A%82%E7%82%B9%E8%BF%9E%E6%8E%A5%E7%AE%A1%E7%90%86%EF%BC%88Peer%E3%80%81Session%E3%80%81Capability%EF%BC%89%20771b457c0b1d4b0ab27c279f4da35b35.html">节点连接管理（Peer、Session、Capability）</a></figure><figure id="841300e4-2d2c-4852-98a8-474715a1a450" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E8%8A%82%E7%82%B9%E8%BF%9E%E6%8E%A5%E7%AE%A1%E7%90%86%E8%BF%87%E7%A8%8B%20841300e42d2c485298a8474715a1a450.html">节点连接管理过程</a></figure><figure id="e66e4c3c-d711-496d-b20b-5c762d27804e" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E9%9B%B6%E5%9C%B0%E5%9D%80%20e66e4c3cd711496db20b5c762d27804e.html">零地址</a></figure><figure id="de21a9e9-5069-4ef1-ae31-215318fad890" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E9%9B%B6%E7%9F%A5%E8%AF%86%E8%AF%81%E6%98%8E%20de21a9e950694ef1ae31215318fad890.html">零知识证明</a></figure><figure id="50afd070-09a4-43cb-8cff-131086070c25" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E9%BB%98%E5%85%8B%E5%B0%94%E5%B8%95%E7%89%B9%E9%87%8C%E5%A4%8FMPT%E6%A0%91%2050afd07009a443cb8cff131086070c25.html">默克尔帕特里夏MPT树</a></figure><figure id="4cb0c571-9eef-4071-8b49-4ca4c103b5aa" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E5%A5%B3%E5%B7%AB%E6%94%BB%E5%87%BB%204cb0c5719eef40718b494ca4c103b5aa.html">女巫攻击</a></figure><figure id="68cf071f-6181-46a1-b73d-667295d0cd62" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E5%8C%BA%E5%9D%97%EF%BC%88%E5%8C%BA%E5%9D%97%E5%A4%B4%E3%80%81%E5%8C%BA%E5%9D%97%E4%BD%93%EF%BC%89%2068cf071f618146a1b73d667295d0cd62.html">区块（区块头、区块体）</a></figure><figure id="10f3a82d-f952-45bb-84bb-2e9fed312760" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E5%8C%BA%E5%9D%97%E5%B9%BF%E6%92%AD%E4%B8%8E%E5%90%8C%E6%AD%A5%2010f3a82df95245bb84bb2e9fed312760.html">区块广播与同步</a></figure><figure id="43818875-92d8-4b06-b7bc-67738f01b201" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E7%A1%AE%E5%AE%9A%E6%80%A7%EF%BC%88%E7%A7%8D%E5%AD%90%EF%BC%89%E9%92%B1%E5%8C%85%204381887592d84b06b7bc67738f01b201.html">确定性（种子）钱包</a></figure><figure id="f1d6bd08-88da-4948-8187-25f242abfc27" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E6%97%A5%E8%9A%80%E6%94%BB%E5%87%BB%EF%BC%88Eclipse%20Attack%EF%BC%89%20f1d6bd0888da4948818725f242abfc27.html">日蚀攻击（Eclipse Attack）</a></figure><figure id="619a4e91-e4da-4d77-a458-0277b9e86ba8" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96%E6%B5%8B%E8%AF%95Ether%20619a4e91e4da4d77a4580277b9e86ba8.html">如何获取测试Ether</a></figure><figure id="64e2e8a8-3cbd-4256-9b33-e62e19e0154e" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E4%B8%89%E7%A7%8D%E4%BB%A3%E5%B8%81%E6%AF%94%E8%BE%83%EF%BC%88NF%E3%80%81NFT%E3%80%81%E6%B7%B7%E5%90%88%E4%BB%A3%E5%B8%81%EF%BC%89%2064e2e8a83cbd42569b33e62e19e0154e.html">三种代币比较（NF、NFT、混合代币）</a></figure><figure id="e9a33e44-740d-4e6e-bb85-350dc1b73605" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E4%BB%80%E4%B9%88%E6%98%AFEIP%20e9a33e44740d4e6ebb85350dc1b73605.html">什么是EIP</a></figure><figure id="e981e830-4114-443b-98cf-1fe2d3923c60" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E4%BD%BF%E7%94%A8%E4%B8%80%E4%B8%AA%E4%BB%A5%E5%A4%AA%E5%9D%8A%E9%92%B1%E5%8C%85%20e981e8304114443b98cf1fe2d3923c60.html">使用一个以太坊钱包</a></figure><figure id="5dd33edb-9fd0-48f4-a138-6dd2bcdfcb41" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E5%8F%94%E5%9D%97%E6%BF%80%E5%8A%B1%E4%B8%8E%E6%9C%BA%E5%88%B6%205dd33edb9fd048f4a1386dd2bcdfcb41.html">叔块激励与机制</a></figure><figure id="29ed8de4-23b6-4282-9cb9-95e1088b78da" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E5%8F%94%E5%8C%BA%E5%9D%97%2029ed8de423b642829cb995e1088b78da.html">叔区块</a></figure><figure id="b7d41369-124b-4f2b-a46e-b2989a176450" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E5%90%8C%E8%B4%A8%E5%8C%96%E4%BB%A3%E5%B8%81%E6%A6%82%E8%A6%81%E4%BB%8B%E7%BB%8D%20b7d41369124b4f2ba46eb2989a176450.html">同质化代币概要介绍</a></figure><figure id="f2fb4ee3-295a-4ec5-8029-fcbfd84d9895" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E6%A4%AD%E5%9C%86%E6%9B%B2%E7%BA%BF%E5%AF%86%E7%A0%81%E5%AD%A6%20f2fb4ee3295a4ec58029fcbfd84d9895.html">椭圆曲线密码学</a></figure><figure id="06884d8b-77ca-4ffc-9e85-66dc06022f8c" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E7%BD%91%E7%BB%9C%E8%8A%82%E7%82%B9%EF%BC%88%E5%85%A8%E8%8A%82%E7%82%B9%E3%80%81%E8%BD%BB%E8%8A%82%E7%82%B9%E3%80%81%E5%AD%98%E6%A1%A3%E8%8A%82%E7%82%B9%EF%BC%89%2006884d8b77ca4ffc9e8566dc06022f8c.html">网络节点（全节点、轻节点、存档节点）</a></figure><figure id="a0ac896b-785a-4ed3-831d-55cc890774ae" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E4%BB%A5%E5%A4%AA%E5%9D%8A%E7%99%BD%E7%9A%AE%E4%B9%A6%20a0ac896b785a4ed3831d55cc890774ae.html">以太坊白皮书</a></figure><figure id="bed80c35-3d44-4a1e-a2dc-46dda9f4a3b8" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E4%BB%A5%E5%A4%AA%E5%9D%8A%E6%B5%8B%E8%AF%95%E7%BD%91%EF%BC%88%E5%85%B6%E4%BB%96Testnets%EF%BC%89%20bed80c353d444a1ea2dc46dda9f4a3b8.html">以太坊测试网（其他Testnets）</a></figure><figure id="149f643d-32f1-4b76-9c23-37de4f8c2f0f" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E4%BB%A5%E5%A4%AA%E5%9D%8A%E6%B5%8B%E8%AF%95%E7%BD%91%EF%BC%88%E8%BF%90%E8%A1%8C%E6%9C%AC%E5%9C%B0%E6%B5%8B%E8%AF%95%E7%BD%91%EF%BC%89%20149f643d32f14b769c2337de4f8c2f0f.html">以太坊测试网（运行本地测试网）</a></figure><figure id="0eb2baf0-1e05-43da-a6e0-56702970fbc9" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E4%BB%A5%E5%A4%AA%E5%9D%8A%E5%AD%98%E5%82%A8%E5%B1%82%200eb2baf01e0543daa6e056702970fbc9.html">以太坊存储层</a></figure><figure id="509c87f9-eca8-44b8-8f34-389bcd2e9eb7" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E4%BB%A5%E5%A4%AA%E5%9D%8A%E7%9A%84%E8%AF%9E%E7%94%9F%20509c87f9eca844b88f34389bcd2e9eb7.html">以太坊的诞生</a></figure><figure id="d24f8b4b-6a9d-4938-a71f-49d8299cdad5" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E4%BB%A5%E5%A4%AA%E5%9D%8A%E5%88%86%E5%8F%89%EF%BC%88%E7%A1%AC%E5%88%86%E5%8F%89%E3%80%81%E8%BD%AF%E5%88%86%E5%8F%89%EF%BC%89%20d24f8b4b6a9d4938a71f49d8299cdad5.html">以太坊分叉（硬分叉、软分叉）</a></figure><figure id="82af06e6-204b-421d-8cd7-da40dac7e288" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E4%BB%A5%E5%A4%AA%E5%9D%8A%E5%85%AC%E9%92%A5%2082af06e6204b421d8cd7da40dac7e288.html">以太坊公钥</a></figure><figure id="7faae2bd-63d3-4d6a-8689-a71aa0aa8e67" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E4%BB%A5%E5%A4%AA%E5%9D%8A%E9%BB%84%E7%9A%AE%E4%B9%A6%207faae2bd63d34d6a8689a71aa0aa8e67.html">以太坊黄皮书</a></figure><figure id="95df27a7-086a-4cfc-8722-24a149f46395" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E4%BB%A5%E5%A4%AA%E5%9D%8A%E8%B4%A7%E5%B8%81%E5%8D%95%E4%BD%8D%2095df27a7086a4cfc872224a149f46395.html">以太坊货币单位</a></figure><figure id="9a79e88b-e065-4ce3-a26a-045a13fb30e2" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E4%BB%A5%E5%A4%AA%E5%9D%8A%E5%BC%80%E5%8F%91%E7%9A%84%E5%9B%9B%E4%B8%AA%E9%98%B6%E6%AE%B5%209a79e88be0654ce3a26a045a13fb30e2.html">以太坊开发的四个阶段</a></figure><figure id="bc5cfcc3-bb57-4845-88a2-205049b99019" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E4%BB%A5%E5%A4%AA%E5%9D%8A%E7%A7%81%E9%92%A5%20bc5cfcc3bb57484588a2205049b99019.html">以太坊私钥</a></figure><figure id="479b81cf-ad48-423c-9c8f-2f7ba09837ce" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E8%B4%A6%E6%88%B7%E5%9C%B0%E5%9D%80%20479b81cfad48423c9c8f2f7ba09837ce.html">账户地址</a></figure><figure id="41b95e5b-e634-43e8-bee3-1dec944b8fbf" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E8%B4%A6%E6%88%B7%E7%B1%BB%E5%9E%8B%2041b95e5be63443e8bee31dec944b8fbf.html">账户类型</a></figure><figure id="98517930-3866-44d3-bd2f-49e3ef8241e9" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6%2098517930386644d3bd2f49e3ef8241e9.html">智能合约</a></figure><figure id="89107ce3-ec26-4bbd-afa0-ff7b0abece16" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E7%A7%8D%E5%AD%90%E5%92%8C%E5%8A%A9%E8%AE%B0%E8%AF%8D%EF%BC%88BIP-39%EF%BC%89%2089107ce3ec264bbdafa0ff7b0abece16.html">种子和助记词（BIP-39）</a></figure><figure id="c54dc8ac-54a8-475d-a174-1f577faf4a33" class="link-to-page"><a href="%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9F%A5%E8%AF%86%E5%BA%93%206d954d02cfed4f22af16fa70ba93eca0/%E9%87%8D%E5%85%A5%E6%94%BB%E5%87%BB%EF%BC%88Re-Entrancy%20Attack%EF%BC%89%20c54dc8ac54a8475da1741f577faf4a33.html">重入攻击（Re-Entrancy Attack）</a></figure><p id="43cf89d6-9703-46d6-af95-5fa07fc067b5" class="">
+</p></details></li></ul><p id="4985ed1a-85a6-4042-bb2e-a64311793dd0" class="">
+</p></div></div></div></article></body></html>
